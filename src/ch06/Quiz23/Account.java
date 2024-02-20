@@ -52,21 +52,34 @@ public class Account {
     }
 
     static void deposit(String accountNum, int amount) {
-        for (Account account : accounts) {
-            if (account != null) {
-                if (accountNum.equals(account.accountNum)) account.balance += amount;
-            } else break;
+        Account account = findAccount(accountNum);
+
+        if (account == null) {
+            System.out.println("결과: 존재하지 않는 계좌입니다.");
+        } else {
+            account.balance += amount;
+            System.out.println("결과: 예금이 성공되었습니다.");
         }
     }
 
     static void withdraw(String accountNum, int amount) {
+        Account account = findAccount(accountNum);
+
+        if (account == null) {
+            System.out.println("결과: 존재하지 않는 계좌입니다.");
+        } else {
+            account.balance -= amount;
+            System.out.println("결과: 출금이 성공되었습니다.");
+        }
+    }
+
+    static Account findAccount(String accountNum) {
+        Account result = null;
         for (Account account : accounts) {
             if (account != null) {
-                if (accountNum.equals(account.accountNum)) {
-                    account.balance -= amount;
-                    System.out.println("결과: 출금이 성공되었습니다.");
-                }
+                if (accountNum.equals(account.accountNum)) result = account;
             } else break;
         }
+        return result;
     }
 }
