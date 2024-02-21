@@ -105,6 +105,12 @@ public class CustomerApplication {
         System.out.print("사용할 포인트: ");
         int point = scanner.nextInt();
 
+        if (point > currentPoint) {
+            System.out.print("결과: 보유하신 포인트가 부족합니다.");
+            System.out.println("(현재 " + currentPoint + "P 보유)");
+            return;
+        }
+
         customer.setPoint(currentPoint - point);
         System.out.println(point + "P를 사용했습니다. " + customer.getPoint() + "P가 남았습니다.");
     }
