@@ -1,7 +1,5 @@
 package ch06.QuizPlus;
 
-import ch06.Quiz23_sol.Account;
-
 import java.util.Scanner;
 
 public class CustomerApplication {
