@@ -8,6 +8,6 @@ public class Quiz04 {
         ➌ throw로 발생된 예외는 일반적으로 생성자나 메소드 선언부에 throws로 떠넘겨진다.
         ➍ throw 키워드 뒤에는 예외 객체 생성 코드가 온다.
 
-        2번
+        2번. throws: 예외 떠넘기기 / throw: 예외 발생시키기
      */
 }
